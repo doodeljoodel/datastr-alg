@@ -1,25 +1,33 @@
 public class GameCharacter {
-    private String player;
-    private String enemy;
-    private int damage=10;
-    private int health=100;
+    private String name;
+    private int damage = 10;
+    private int health;
 
-    public GameCharacter(String player, int health) {
-        this.player=player;
+    public GameCharacter(String name, int health) {
+        setName(name);
+        setHealth(health);
+        setTakenDamage(damage);
         
     }
-    public String getGameCharacter() {
-        return player;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getEnemyCharacter() {
-        return enemy;
+    public String getName() {
+        return name;
+    }
+    public void setHealth(int health) {
+        this.health = health;
     }
     public int getHealth() {
         return health;
     }
-    public int takeDamage() {
+    public void setTakenDamage( int damage) {
+        this.damage = damage;
+    } 
+    public int getTakenDamage() {
         return damage;
-        
     }
-
+    public void takeDamage() {
+        health = health-damage;
+    }
 }
